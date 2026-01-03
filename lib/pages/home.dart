@@ -26,164 +26,166 @@ class _HomeState extends State<Home> {
 
   List<Widget> buildFenetre(bool isDarkMode) {
     return [
-    Stack(
-      children: [
-        // Text("Trendig"),
-        //icon favorite
-        Positioned(
-          top: 20,
-          right: 20,
-          child: Container(
-            padding: EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 1),
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Colors.white),
-            ),
-            child: IconButton(
-              icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border, color: Colors.blue, size: 24),
-              onPressed: () {
-                setState(() {
-                  isFavorite = !isFavorite;
-                });
-              },
-            ),
-          ),
-        ),//end icon favorite
-        
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            //image
-            Container(
-              height: 242,
-              width: double.infinity,
+    SingleChildScrollView(
+      child: Stack(
+        children: [
+          // Text("Trendig"),
+          //icon favorite
+          Positioned(
+            top: 20,
+            right: 20,
+            child: Container(
+              padding: EdgeInsets.all(8),
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Color(0xFFFFBCC7).withValues(alpha: 1),
-                    Color(0xFFC732D4).withValues(alpha: 1),
-                  ],
-                ),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(10),
-                  topRight: Radius.circular(10),
-                ),
+                color: Colors.white.withValues(alpha: 1),
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: Colors.white),
               ),
-              child: Image.asset("assets/images/Image1.png"),
+              child: IconButton(
+                icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border, color: Colors.blue, size: 24),
+                onPressed: () {
+                  setState(() {
+                    isFavorite = !isFavorite;
+                  });
+                },
+              ),
             ),
-            //contenue
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(10),
-                  bottomRight: Radius.circular(10),
-                ),
-                gradient: isDarkMode ? LinearGradient(
-                    colors: [Colors.white, Colors.white]): LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Colors.transparent,
-                    ColorApp.secondary.withValues(alpha: 0.1),
-                  ])
-              ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                    vertical: 12.0,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Backpack (Pacific Pink)",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          color: isDarkMode ? Colors.black : Colors.white,
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        "Auction ends : 1h 30m 45s",
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.grey,
-                        ),
-                      ),
-                      const SizedBox(height: 25),
-                      Row(
-                        children: [
-                          Image.asset("assets/images/gg.png", width: 40, height: 40,),
-                          const SizedBox(width: 16),
-                          Text(
-                            "Bjorka Robert",
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w700,
-                              color: isDarkMode ? Colors.black : Colors.white
-                            ),
-                          ),
-                          const SizedBox(width: 4),
-                          SvgPicture.asset("assets/images/certif.svg"),
-                          Spacer(),
-                          GestureDetector(
-                            onTap: () {},
-                            child: Container(
-                              height: 37,
-                              width: 83,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                gradient: LinearGradient(
-                                  begin: Alignment.centerLeft,
-                                  end: Alignment.centerRight,
-                                  colors: [ColorApp.secondary, ColorApp.primary],
-                                ),
-                              ),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.shopping_cart_outlined,
-                                    color: Colors.white,
-                                  ),
-                                  const SizedBox(width: 8),
-                                  Text(
-                                    "Cart",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+          ),//end icon favorite
+          
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              //image
+              Container(
+                height: 242,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color(0xFFFFBCC7).withValues(alpha: 1),
+                      Color(0xFFC732D4).withValues(alpha: 1),
                     ],
                   ),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                  ),
                 ),
+                child: Image.asset("assets/images/Image1.png"),
               ),
-              const SizedBox(height: 24),
-              Row(
-                children: [
-                  Text("Top Collection", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),),
-                  Spacer(),
-                  Text("See all", style: TextStyle(color: ColorApp.primary,fontSize: 12,fontWeight: FontWeight.w400),),
-                ],
-              ),
-              const SizedBox(height: 24),
-              Collection(),
-              
-          ],
-        ),
-      ],
+              //contenue
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10),
+                  ),
+                  gradient: isDarkMode ? LinearGradient(
+                      colors: [Colors.white, Colors.white]): LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.transparent,
+                      ColorApp.secondary.withValues(alpha: 0.1),
+                    ])
+                ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0,
+                      vertical: 12.0,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Backpack (Pacific Pink)",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                            color: isDarkMode ? Colors.white : Colors.black,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          "Auction ends : 1h 30m 45s",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.grey,
+                          ),
+                        ),
+                        const SizedBox(height: 25),
+                        Row(
+                          children: [
+                            Image.asset("assets/images/gg.png", width: 40, height: 40,),
+                            const SizedBox(width: 16),
+                            Text(
+                              "Bjorka Robert",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w700,
+                                color: isDarkMode ? Colors.white : Colors.black
+                              ),
+                            ),
+                            const SizedBox(width: 4),
+                            SvgPicture.asset("assets/images/certif.svg"),
+                            Spacer(),
+                            GestureDetector(
+                              onTap: () {},
+                              child: Container(
+                                height: 37,
+                                width: 83,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  gradient: LinearGradient(
+                                    begin: Alignment.centerLeft,
+                                    end: Alignment.centerRight,
+                                    colors: [ColorApp.secondary, ColorApp.primary],
+                                  ),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.shopping_cart_outlined,
+                                      color: Colors.white,
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Text(
+                                      "Cart",
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 24),
+                Row(
+                  children: [
+                    Text("Top Collection", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),),
+                    Spacer(),
+                    Text("See all", style: TextStyle(color: ColorApp.primary,fontSize: 12,fontWeight: FontWeight.w400),),
+                  ],
+                ),
+                const SizedBox(height: 24),
+                Collection(),
+                
+            ],
+          ),
+        ],
+      ),
     ),
     Column(children: [Text("Recent")]),
     Column(children: [Text("Top")]),

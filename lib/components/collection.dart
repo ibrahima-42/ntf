@@ -51,13 +51,13 @@ class _CollectionState extends State<Collection> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("G plate reby", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: isDarkMode ? Colors.black : Colors.white),),
+              Text("G plate reby", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: isDarkMode ? Colors.white : Colors.black),),
               const SizedBox(height: 8),
               Row(
                 children: [
                   Text("Floor price", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: Colors.grey),),
                   const SizedBox(width: 4),
-                  Text("1.23 ETH", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: isDarkMode ? Colors.black : Colors.white),),
+                  Text("1.23 ETH", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: isDarkMode ? Colors.white : Colors.black),),
                 ],
               ),
             ],
