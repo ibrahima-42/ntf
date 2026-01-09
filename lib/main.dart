@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:nft/constant/color.dart';
@@ -16,6 +17,21 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  bool isScreen = true;
+  
+  
+  @override
+  void initState() {
+    super.initState();
+    // TODO: implement initState
+    Timer(const Duration(seconds: 3), () {
+      setState(() {
+        isScreen = false;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion(
@@ -29,7 +45,7 @@ class _MyAppState extends State<MyApp> {
           }
           return null;
         },
-        home: CupertinoTabScaffold(
+        home: isScreen ? Screen() : CupertinoTabScaffold(
           tabBuilder: (context, index) {
             switch (index) {
               case 0:
